@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everyday Git</title>
+    <h1>GIT</h1>
+</head>
+<body>
+    <div>
+        <h2>Introduction to Git</h2>
+        <p>Frustrated with lost work or untraceable changes? Version control systems like Git are here to save the day! <b>Git</b>, the most popular option, tracks changes in your files, letting you rewind to any point in time. This blog series will be your guide to mastering Git and its partner, GitHub, teaching you how to manage your projects like a pro.</p>
+        <h3>Version Control Systems</h3>
+        <p>Let's take a time to define a version control system before delving further into Git. Developers can monitor changes made to their codebase with the use of a version control system (VCS). It offers developers a distributed or centralized repository where they may work together, save, and manage their code.</p>
+        <p>Although the focus of our blog series is Git, it's important to highlight a few additional well-liked version control systems as well:</p>
+        <ol>
+            <li> <strong>Subversion (SVN):</strong> SVN functions as a centralized version control system where files and their modifications are stored in a central repository. Though widely utilized in the past, its popularity has waned with the emergence of Git, which offers distributed capabilities and a richer set of features.</li> <br>
+            <li> <strong>Mercurial:</strong> Mercurial resembles Git in being a distributed version control system, boasting an intuitive interface. It excels in managing substantial projects and offers scalability, making it a compelling alternative to Git.
+
+            </li><br>
+            <li> <strong>Perforce:</strong> Tailored for enterprise-grade projects, perforce operates as a centralized version control system. Its feature set includes sophisticated functionalities such as atomic commits, precise access control mechanisms, and high-performance capabilities.</li>
+        </ol>
+    </div>
+    <div>
+        <h2>Installing Git</h2>
+        <p>To verify if Git is installed on your machine, you can open a terminal or command prompt and execute the following command: <b>git –version or git -v</b></p>
+        <figure>
+            <img src="./assets/install-git.PNG" alt="install-git">
+            <figcaption>This command will display the installed version of Git if it's available. If Git is not installed, you'll likely receive an error message indicating that the command is not recognized.
+
+            </figcaption>
+           
+        </figure>
+        <p>If it's not installed, you can easily download it from the official Git website at <a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a>. Simply select the installer that matches your operating system and follow the installation instructions provided. Once installed, you'll be able to use Git commands in your terminal or command prompt. </p>
+        <img src="./assets/gitdownload.PNG" alt="download/git">
+
+        
+    </div><br><br>
+    <div>
+        <h2>Configuring Git</h2>
+        <p>To set up Git with your username and email address, you can execute the following commands in a terminal or command prompt:</p>
+        <ul>
+            <li><b>git config --global user.name "Your Name"</b></li>
+            <li><b>git config --global user.email "your-email@example.com"</b></li>
+        </ul><br>
+        <p>Make sure to replace <b>"Your Name"</b> with your actual name and <b> "your-email@example.com" </b>with your email address. These configurations are essential for identifying who made the changes when you commit them.</p>
+        <img src="./assets/git config.PNG" alt="git/configuration">
+    </div><br>
+    <div>
+        <h2>Initializing a Git Repository</h2>
+        <p>To initialize a Git repository for your project, navigate to the root folder of your project using a terminal or command prompt, and then execute the following command: <b>git init</b></p>
+        <img src="./assets/initializing git.PNG" alt="initializing git">
+        <p>This command initializes a new Git repository in the current directory, marking it as the root of your project. After running this command, Git will begin tracking changes to files within this directory.</p>
+        <img src="./assets/initializing git2.PNG" alt="">
+
+    </div><br>
+    <div>
+        <h2>Adding Files to the Staging Area</h2>
+        <p> <b>Checking Untracked Files:</b> Before adding files to the staging area, you can use the <b>git status</b> command to see which files are untracked (i.e., Git is not currently monitoring changes to them). Untracked files are typically new files that haven't been added to the repository yet. To check for untracked files, run:</p>
+        <figure>
+            <img src="./assets/untrcked files.PNG" alt="checking untacked files">
+            <figcaption>This command adds a specific file to the staging area.</figcaption>
+
+        </figure>
+        <p>Alternatively, you can use the `. ` notation to add all modified and new files in the current directory and its subdirectories: <b>git add</b>.</p>
+        <figure>
+            <img src="./assets/git add.PNG" alt="git add/command">
+            <figcaption>This command adds all modified and new files to the staging area.</figcaption>
+
+        </figure>
+        <p><b>Checking Staged Files:</b> After adding files to the staging area, you can use the git status command again to see which files are staged for the next commit. Staged files are those that have been added to the staging area but haven't been committed yet. Running <b>git status </b> will display both staged and unstaged changes.</p>
+        <img src="./assets/git status.PNG" alt="">
+       
+    </div><br>
+    <div>
+        <h2>Committing Changes</h2>
+        <p><strong>Committing Changes</strong></p>
+        <p>Put a clear explanation of the changes made in the “Commit message". It is advisable to provide concise and insightful commit messages in order to accurately describe the changes. Below is a demonstration of an example.</p>
+        <img src="./assets/git commit.PNG" alt="git/commit">
+        <p>You can use the <b>git log</b> command as follows to view previous commits:</p>
+        <img src="./assets/gitlog.PNG" alt="gitlog">
+
+        <p>Use the command <b>git log --oneline</b> to view previous commits together with their corresponding commit-hash before using <b>git checkout commit-hash</b>  to roll back to a specific commit. 
+
+        </p>
+        <p>As shown below, replace <b>commit-hash </b>with the commit's hash that you wish to revert to. Note that any uncommitted changes are discarded during this operation.</p>
+        <img src="./assets/Capture.PNG" alt="">
+
+    
+    </div><nav><br></nav>
+    <div>
+        <h2>Branches</h2>
+        <p>Git branches serve as references to particular commits within the repository's timeline. They facilitate simultaneous development by accommodating multiple streams of work without causing conflicts. Branches are instrumental in segregating features, bug fixes, or experimental changes.</p>
+    </div><br>
+    <div>
+        <h3>Creating a Branch</h3>
+    <p>To initiate a new branch in Git, utilize the command git branch branch-name. Substitute "branch-name" with your preferred name for the branch. This action establishes a fresh branch referencing the same commit as the current branch.</p>
+    <img src="./assets/branch.PNG" alt="assets">
+    </div><br>
+    <div>
+        <h2>Viewing All Branches</h2>
+        <p>To view all branches in a Git repository, you can use the git branch command:</p>
+        <img src="./assets/git branch.PNG" alt="check branch name">
+    </div><br>
+    <div>
+        <h2>Switching Active Branches</h2>
+        <p>To switch to a different branch in Git, you can use the git <b>checkout branch-name </b>command:
+            Replace branch-name with the name of the branch you want to switch to. For example, if you have a branch named <b>"francis/portifolio"</b> , you would use:
+            </p>
+            <img src="./assets/gitcheckout.PNG" alt="git/checkout">
+            <p>Starting from Git version 2.23, you can also use the <b> git switch branch-name </b>command: Both commands will make the specified branch the active branch, updating the working directory to reflect the files and history of that branch
+                <b>Merging a Branch</b>
+                </p><br>
+                <p>To integrate changes from another branch into the current branch, employ the command <b>git merge branch-name</b> . Substitute <b>branch-name</b>  with the name of the branch you intend to merge into the current branch. This action combines the alterations from the specified branch into the current branch.</p>
+                <img src="./assets/gitmerge.PNG" alt="git marge">
+    </div>
+    <div>
+        <h2>Deleting a branch</h2>
+        <p>To delete a branch in Git, you can use the <b>git branch -d branch-name</b>  command:
+            Replace branch-name with the name of the branch you want to delete. This command deletes the specified branch if it has already been fully merged into the current branch.
+            <img src="./assets/git delete.PNG" alt="git branch - d branch/name">
+            
+            </p>
+    </div><br>
+    <div>
+        <h2>Next Steps</h2>
+        <p>Congratulations on mastering the basics! Now, it's time to explore branching strategies for parallel development and collaboration features like pull requests on platforms such as GitHub. </p><p>Practice pushing and pulling changes between local and remote repositories, and learn about resolving merge conflicts. These steps will enhance your Git proficiency and streamline your workflow.</p>
+    </div>
+    <br>
+    <br><br>
+    
+
+
+   
+</body>
+</html>
